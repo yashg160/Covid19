@@ -1,4 +1,5 @@
 import React from "react";
+import AutocompleteText from "./AutocompleteText";
 import "./css/App.css";
 
 export default class App extends React.Component {
@@ -25,7 +26,7 @@ export default class App extends React.Component {
 							<h5>Some figure</h5>
 						</div>
 					</div>
-
+					<AutocompleteText />
 					<div className="card-container">
 						<div className="card">
 							<p>Total India Cases</p>
