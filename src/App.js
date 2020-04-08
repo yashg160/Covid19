@@ -26,6 +26,7 @@ export default class App extends React.Component {
 							<h5>Some figure</h5>
 						</div>
 					</div>
+					<h2 className="instruction">Enter a country name</h2>
 					<AutocompleteText />
 					<div className="card-container">
 						<div className="card">
