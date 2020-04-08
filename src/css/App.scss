@@ -1,8 +1,3 @@
-.main {
-	width: 100vw;
-	height: 100vh;
-}
-
 #navbar {
 	width: 100%;
 	height: 10vh;
@@ -16,16 +11,16 @@
 	height: 100%;
 	background-color: rgba($color: #222222, $alpha: 0.7);
 	display: flex;
-	flex-direction: column;
+	flex-flow: column;
 	align-items: center;
 	justify-content: center;
 }
 
 .card-container {
-	align-self: center;
 	display: flex;
+	flex: 1 1 auto;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
 	flex-wrap: wrap;
 	padding: 2rem 0;
@@ -44,8 +39,10 @@
 }
 
 @media screen and (max-width: 676px) {
+	.main {
+		width: 100vw;
+	}
 	.card-container {
-		align-self: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -64,5 +61,12 @@
 		justify-content: center;
 		color: white;
 		margin: 2rem 0;
+	}
+}
+
+@media screen and (min-width: 677px) {
+	.main {
+		height: 90vh;
+		width: 100vw;
 	}
 }
