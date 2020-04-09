@@ -1,0 +1,7 @@
+export const LOADING_GLOBAL = "LOADING_GLOBAL";
+export const ADD_GLOBAL = "ADD_GLOBAL";
+export const ERROR_GLOBAL = "ERROR_GLOBAL";
+
+export const LOADING_COUNTRY = "LOADING_COUNTRY";
+export const ADD_COUNTRY = "ADD_COUNTRY";
+export const ERROR_COUNTRY = "ERROR_COUNTRY";
