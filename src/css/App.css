@@ -68,6 +68,12 @@
   grid-column: 3 / span 1;
 }
 
+.card-4 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / span 1;
+}
+
 .card-title {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -95,6 +101,10 @@
 
 .red {
   color: #c00;
+}
+
+.yellow {
+  color: #fffb00;
 }
 
 .instruction {

@@ -45,6 +45,10 @@
 	grid-column: 3 / span 1;
 }
 
+.card-4 {
+	grid-column: 4 / span 1;
+}
+
 .card-title {
 	grid-row: 1 / span 1;
 	font-size: small;
@@ -66,6 +70,10 @@
 
 .red {
 	color: #c00;
+}
+
+.yellow {
+	color: rgba($color: #fffb00, $alpha: 1);
 }
 
 .instruction {
