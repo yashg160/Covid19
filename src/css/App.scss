@@ -1,15 +1,16 @@
 #navbar {
 	width: 100%;
 	height: 10vh;
-	background-color: rgba($color: #e9e9e9, $alpha: 1);
+	background-color: rgba($color: #303030, $alpha: 1);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: rgb(200, 200, 200);
 }
 
 .container {
 	height: 100%;
-	background-color: rgba($color: #222222, $alpha: 0.7);
+	background-color: rgb(40, 40, 40);
 	display: flex;
 	flex-flow: column;
 	align-items: center;
@@ -22,10 +23,9 @@
 }
 
 .card {
-	height: 8rem;
+	height: 6rem;
 	width: 12rem;
-	border: 0.15rem solid white;
-	border-radius: 1rem;
+	border: 0.05rem solid white;
 	padding: 0.5rem;
 	display: grid;
 	text-align: center;
@@ -48,7 +48,8 @@
 .card-title {
 	grid-row: 1 / span 1;
 	font-size: small;
-	font-weight: 400;
+	text-transform: uppercase;
+	font-weight: 900;
 }
 
 .card-content {
@@ -59,8 +60,16 @@
 	margin-block-start: 0;
 }
 
+.green {
+	color: rgba($color: #0ac003, $alpha: 1);
+}
+
+.red {
+	color: #c00;
+}
+
 .instruction {
-	color: white;
+	color: rgb(200, 200, 200);
 	font-size: large;
 }
 
