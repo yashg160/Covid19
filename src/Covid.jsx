@@ -128,6 +128,21 @@ class Covid extends React.Component {
 								</div>
 							)}
 						</div>
+
+						<div className="card card-4">
+							{this.props.countryLoading ? (
+								<p>Loading...</p>
+							) : (
+								<div>
+									<p className="card-title">
+										{this.props.country[0].Country} Active
+									</p>
+									<h5 className="card-content yellow">
+										{this.props.country.slice(-1)[0].Active}
+									</h5>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>
