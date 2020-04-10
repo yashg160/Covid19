@@ -73,10 +73,14 @@ class Covid extends React.Component {
 							) : (
 								<div>
 									<p className="card-title">
-										Total India Cases
+										Total {this.props.country[0].Country}{" "}
+										Cases
 									</p>
 									<h5 className="card-content">
-										Some figure
+										{
+											this.props.country.slice(-1)[0]
+												.Confirmed
+										}
 									</h5>
 								</div>
 							)}
@@ -88,10 +92,11 @@ class Covid extends React.Component {
 							) : (
 								<div>
 									<p className="card-title">
-										Total India Cases
+										Total {this.props.country[0].Country}{" "}
+										Cases
 									</p>
 									<h5 className="card-content">
-										Some figure
+										{this.props.country.slice(-1)[0].Deaths}
 									</h5>
 								</div>
 							)}
@@ -103,10 +108,14 @@ class Covid extends React.Component {
 							) : (
 								<div>
 									<p className="card-title">
-										Total India Cases
+										Total {this.props.country[0].Country}{" "}
+										Cases
 									</p>
 									<h5 className="card-content">
-										Some figure
+										{
+											this.props.country.slice(-1)[0]
+												.Recovered
+										}
 									</h5>
 								</div>
 							)}
