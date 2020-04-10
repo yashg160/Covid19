@@ -20,36 +20,96 @@ class Covid extends React.Component {
 				<div className="container">
 					<div className="card-container">
 						<div className="card card-1">
-							<p className="card-title">Total India Cases</p>
-							<h5 className="card-content">Some figure</h5>
+							{this.props.globalLoading ? (
+								<p>Loading...</p>
+							) : (
+								<div>
+									<p className="card-title">World Total</p>
+									<h5 className="card-content">
+										{
+											this.props.global.Global
+												.TotalConfirmed
+										}
+									</h5>
+								</div>
+							)}
 						</div>
 
 						<div className="card card-2">
-							<p className="card-title">Total India Cases</p>
-							<h5 className="card-content">Some figure</h5>
+							{this.props.globalLoading ? (
+								<p>Loading...</p>
+							) : (
+								<div>
+									<p className="card-title">World Total</p>
+									<h5 className="card-content">
+										{this.props.global.Global.TotalDeaths}
+									</h5>
+								</div>
+							)}
 						</div>
 
 						<div className="card card-3">
-							<p className="card-title">Total India Cases</p>
-							<h5 className="card-content">Some figure</h5>
+							{this.props.globalLoading ? (
+								<p>Loading...</p>
+							) : (
+								<div>
+									<p className="card-title">World Total</p>
+									<h5 className="card-content">
+										{
+											this.props.global.Global
+												.TotalRecovered
+										}
+									</h5>
+								</div>
+							)}
 						</div>
 					</div>
 					<h2 className="instruction">Enter a country name</h2>
 					<AutocompleteText />
 					<div className="card-container">
 						<div className="card card-1">
-							<p className="card-title">Total India Cases</p>
-							<h5 className="card-content">Some figure</h5>
+							{this.props.countryLoading ? (
+								<p>Loading...</p>
+							) : (
+								<div>
+									<p className="card-title">
+										Total India Cases
+									</p>
+									<h5 className="card-content">
+										Some figure
+									</h5>
+								</div>
+							)}
 						</div>
 
 						<div className="card card-2">
-							<p className="card-title">Total India Cases</p>
-							<h5 className="card-content">Some figure</h5>
+							{this.props.countryLoading ? (
+								<p>Loading...</p>
+							) : (
+								<div>
+									<p className="card-title">
+										Total India Cases
+									</p>
+									<h5 className="card-content">
+										Some figure
+									</h5>
+								</div>
+							)}
 						</div>
 
 						<div className="card card-3">
-							<p className="card-title">Total India Cases</p>
-							<h5 className="card-content">Some figure</h5>
+							{this.props.countryLoading ? (
+								<p>Loading...</p>
+							) : (
+								<div>
+									<p className="card-title">
+										Total India Cases
+									</p>
+									<h5 className="card-content">
+										Some figure
+									</h5>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
