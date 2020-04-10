@@ -294,12 +294,15 @@ export default class AutocompleteText extends React.Component {
 	// Event fired when the user clicks on a suggestion
 	onClick = (e) => {
 		// Update the user input and reset the rest of the state
-		this.setState({
-			activeSuggestion: 0,
-			filteredSuggestions: [],
-			showSuggestions: false,
-			userInput: e.currentTarget.innerText,
-		});
+		this.setState(
+			{
+				activeSuggestion: 0,
+				filteredSuggestions: [],
+				showSuggestions: false,
+				userInput: e.currentTarget.innerText,
+			},
+			() => this.props.newCountry(e, this.state.userInput)
+		);
 	};
 
 	// Event fired when the user presses a key down
@@ -309,11 +312,14 @@ export default class AutocompleteText extends React.Component {
 		// User pressed the enter key, update the input and close the
 		// suggestions
 		if (e.keyCode === 13) {
-			this.setState({
-				activeSuggestion: 0,
-				showSuggestions: false,
-				userInput: filteredSuggestions[activeSuggestion],
-			});
+			this.setState(
+				{
+					activeSuggestion: 0,
+					showSuggestions: false,
+					userInput: filteredSuggestions[activeSuggestion],
+				},
+				() => this.props.newCountry(e, this.state.userInput)
+			);
 		}
 		// User pressed the up arrow, decrement the index
 		else if (e.keyCode === 38) {
@@ -355,7 +361,7 @@ export default class AutocompleteText extends React.Component {
 		if (showSuggestions && userInput) {
 			if (filteredSuggestions.length) {
 				suggestionsListComponent = (
-					<ul class="suggestions">
+					<ul className="suggestions">
 						{filteredSuggestions.map((suggestion, index) => {
 							let className;
 
