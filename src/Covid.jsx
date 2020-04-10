@@ -13,6 +13,7 @@ class Covid extends React.Component {
 
 	newCountry(e, country) {
 		console.log(country);
+		this.props.fetchCountryData(country);
 	}
 
 	render() {
@@ -20,7 +21,7 @@ class Covid extends React.Component {
 		return (
 			<div className="main">
 				<div id="navbar">
-					<h3>COVID-19</h3>
+					<h3>COVID-19 TRACKER</h3>
 				</div>
 				<div className="container">
 					<div className="card-container">
@@ -45,8 +46,8 @@ class Covid extends React.Component {
 								<p>Loading...</p>
 							) : (
 								<div>
-									<p className="card-title">World Total</p>
-									<h5 className="card-content">
+									<p className="card-title">World Deaths</p>
+									<h5 className="card-content red">
 										{this.props.global.Global.TotalDeaths}
 									</h5>
 								</div>
@@ -58,8 +59,10 @@ class Covid extends React.Component {
 								<p>Loading...</p>
 							) : (
 								<div>
-									<p className="card-title">World Total</p>
-									<h5 className="card-content">
+									<p className="card-title">
+										World Recovered
+									</p>
+									<h5 className="card-content green">
 										{
 											this.props.global.Global
 												.TotalRecovered
@@ -69,7 +72,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 					</div>
-					<h2 className="instruction">Enter a country name</h2>
+					<h2 className="instruction">Country Name</h2>
 					<AutocompleteText
 						newCountry={(e, country) => this.newCountry(e, country)}
 					/>
@@ -80,8 +83,7 @@ class Covid extends React.Component {
 							) : (
 								<div>
 									<p className="card-title">
-										Total {this.props.country[0].Country}{" "}
-										Cases
+										{this.props.country[0].Country} Total
 									</p>
 									<h5 className="card-content">
 										{
@@ -99,10 +101,9 @@ class Covid extends React.Component {
 							) : (
 								<div>
 									<p className="card-title">
-										Total {this.props.country[0].Country}{" "}
-										Cases
+										{this.props.country[0].Country} Deaths
 									</p>
-									<h5 className="card-content">
+									<h5 className="card-content red">
 										{this.props.country.slice(-1)[0].Deaths}
 									</h5>
 								</div>
@@ -115,10 +116,10 @@ class Covid extends React.Component {
 							) : (
 								<div>
 									<p className="card-title">
-										Total {this.props.country[0].Country}{" "}
-										Cases
+										{this.props.country[0].Country}{" "}
+										Recovered
 									</p>
-									<h5 className="card-content">
+									<h5 className="card-content green">
 										{
 											this.props.country.slice(-1)[0]
 												.Recovered
