@@ -4,6 +4,7 @@ export default function Global(
 	state = {
 		errMess: null,
 		data: null,
+		loading: true,
 	},
 	action
 ) {
