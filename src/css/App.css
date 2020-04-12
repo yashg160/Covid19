@@ -106,8 +106,28 @@ body {
           margin-block-start: 0;
 }
 
+.red-card {
+  background-color: rgba(204, 0, 0, 0.1);
+}
+
+.neutral-card {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.green-card {
+  background-color: rgba(10, 192, 3, 0.1);
+}
+
+.yellow-card {
+  background-color: rgba(255, 251, 0, 0.1);
+}
+
 .green {
   color: #0ac003;
+}
+
+.neutral {
+  color: #d6d6d6;
 }
 
 .red {

@@ -75,8 +75,28 @@ body {
 	margin-block-start: 0;
 }
 
+.red-card {
+	background-color: rgba($color: #cc0000, $alpha: 0.1);
+}
+
+.neutral-card {
+	background-color: rgba($color: #000000, $alpha: 0.1);
+}
+
+.green-card {
+	background-color: rgba($color: #0ac003, $alpha: 0.1);
+}
+
+.yellow-card {
+	background-color: rgba($color: #fffb00, $alpha: 0.1);
+}
+
 .green {
 	color: rgba($color: #0ac003, $alpha: 1);
+}
+
+.neutral {
+	color: rgba($color: rgba($color: #d6d6d6, $alpha: 0.1), $alpha: 1);
 }
 
 .red {
