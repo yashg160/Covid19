@@ -30,13 +30,13 @@ class Covid extends React.Component {
 				</div>
 				<div className="container">
 					<div className="card-container">
-						<div className="card card-1">
+						<div className="card card-1 red-card">
 							{this.props.globalLoading ? (
 								<p>Loading...</p>
 							) : (
 								<div>
 									<p className="card-title">World Total</p>
-									<h5 className="card-content">
+									<h5 className="card-content red">
 										{
 											this.props.global.Global
 												.TotalConfirmed
@@ -46,20 +46,20 @@ class Covid extends React.Component {
 							)}
 						</div>
 
-						<div className="card card-2">
+						<div className="card card-2 neutral-card">
 							{this.props.globalLoading ? (
 								<p>Loading...</p>
 							) : (
 								<div>
 									<p className="card-title">World Deaths</p>
-									<h5 className="card-content red">
+									<h5 className="card-content neutral">
 										{this.props.global.Global.TotalDeaths}
 									</h5>
 								</div>
 							)}
 						</div>
 
-						<div className="card card-3">
+						<div className="card card-3 green-card">
 							{this.props.globalLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -82,7 +82,7 @@ class Covid extends React.Component {
 						newCountry={(e, country) => this.newCountry(e, country)}
 					/>
 					<div className="card-container">
-						<div className="card card-1">
+						<div className="card card-1 red-card">
 							{this.props.countryLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -90,7 +90,7 @@ class Covid extends React.Component {
 									<p className="card-title">
 										{this.props.country[0].Country} Total
 									</p>
-									<h5 className="card-content">
+									<h5 className="card-content red">
 										{
 											this.props.country.slice(-1)[0]
 												.Confirmed
@@ -100,7 +100,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 
-						<div className="card card-2">
+						<div className="card card-2 neutral-card">
 							{this.props.countryLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -108,14 +108,14 @@ class Covid extends React.Component {
 									<p className="card-title">
 										{this.props.country[0].Country} Deaths
 									</p>
-									<h5 className="card-content red">
+									<h5 className="card-content neutral">
 										{this.props.country.slice(-1)[0].Deaths}
 									</h5>
 								</div>
 							)}
 						</div>
 
-						<div className="card card-3">
+						<div className="card card-3 green-card">
 							{this.props.countryLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -134,7 +134,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 
-						<div className="card card-4">
+						<div className="card card-4 yellow-card">
 							{this.props.countryLoading ? (
 								<p>Loading...</p>
 							) : (
