@@ -156,7 +156,9 @@ class Covid extends React.Component {
 							<p>Loading...</p>
 						) : (
 							this.props.india.map((state) => (
-								<div className="india-card">
+								<div
+									className="india-card"
+									key={state.stateName}>
 									<p className="india-card-title">
 										{state.stateName}
 									</p>
