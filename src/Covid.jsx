@@ -149,6 +149,27 @@ class Covid extends React.Component {
 							)}
 						</div>
 					</div>
+					<div className="india-cards-container">
+						{this.props.indiaLoading ? (
+							<p>Loading...</p>
+						) : (
+							this.props.india.map((state) => (
+								<div className="india-card">
+									<p className="india-card-title">
+										{state.stateName}
+									</p>
+									<div className="india-card-content-row">
+										<p className="india-card-field">
+											Confirmed
+										</p>
+										<p className="india-card-content">
+											{state.confirmed}
+										</p>
+									</div>
+								</div>
+							))
+						)}
+					</div>
 				</div>
 			</div>
 		);
