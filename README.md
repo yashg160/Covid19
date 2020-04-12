@@ -17,3 +17,4 @@ This is a simple react app that fetches data regarding the ongoing coronavirus p
 -   Added state level details for India
 -   Updated redux code and used new API for fetching data
 -   Added footer to add credits to creator
+-   Removed unnecessary boilerplate and files
