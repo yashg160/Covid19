@@ -166,6 +166,30 @@ class Covid extends React.Component {
 											{state.confirmed}
 										</p>
 									</div>
+									<div className="india-card-content-row">
+										<p className="india-card-field">
+											Active
+										</p>
+										<p className="india-card-content">
+											{state.active}
+										</p>
+									</div>
+									<div className="india-card-content-row">
+										<p className="india-card-field">
+											Deaths
+										</p>
+										<p className="india-card-content">
+											{state.deaths}
+										</p>
+									</div>
+									<div className="india-card-content-row">
+										<p className="india-card-field">
+											Recovered
+										</p>
+										<p className="india-card-content">
+											{state.recovered}
+										</p>
+									</div>
 								</div>
 							))
 						)}
