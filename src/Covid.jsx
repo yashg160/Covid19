@@ -2,13 +2,18 @@ import React from "react";
 import AutocompleteText from "./AutocompleteText";
 import "./css/App.css";
 
-import { fetchGlobalData, fetchCountryData } from "./redux/ActionCreators";
+import {
+	fetchGlobalData,
+	fetchCountryData,
+	fetchIndiaData,
+} from "./redux/ActionCreators";
 import { connect } from "react-redux";
 
 class Covid extends React.Component {
 	componentDidMount() {
 		this.props.fetchGlobalData();
 		this.props.fetchCountryData("india");
+		this.props.fetchIndiaData();
 	}
 
 	newCountry(e, country) {
@@ -155,8 +160,12 @@ const mapStateToProps = (state) => ({
 	globalLoading: state.global.loading,
 	country: state.country.data,
 	countryLoading: state.country.loading,
+	india: state.india.data,
+	indiaLoading: state.india.loading,
 });
 
-export default connect(mapStateToProps, { fetchGlobalData, fetchCountryData })(
-	Covid
-);
+export default connect(mapStateToProps, {
+	fetchGlobalData,
+	fetchCountryData,
+	fetchIndiaData,
+})(Covid);
