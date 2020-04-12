@@ -149,6 +149,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 					</div>
+					<h2 className="instruction">India Details</h2>
 					<div className="india-cards-container">
 						{this.props.indiaLoading ? (
 							<p>Loading...</p>
