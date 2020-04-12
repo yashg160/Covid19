@@ -1,5 +1,6 @@
 import React from "react";
 import AutocompleteText from "./AutocompleteText";
+import Footer from "./Footer";
 import "./css/App.css";
 
 import {
@@ -196,6 +197,7 @@ class Covid extends React.Component {
 						)}
 					</div>
 				</div>
+				<Footer />
 			</div>
 		);
 	}
