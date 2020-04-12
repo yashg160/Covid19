@@ -9,7 +9,7 @@
 }
 
 .container {
-	height: 100%;
+	height: auto;
 	background-color: rgb(40, 40, 40);
 	display: flex;
 	flex-flow: column;
@@ -84,16 +84,16 @@
 .india-cards-container {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
 }
 
 .india-card {
-	height: 4rem;
+	height: auto;
 	width: 10rem;
 	border: 0.05rem solid white;
 	padding: 0.5rem;
-	margin: 1rem;
+	margin: 0.8rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -103,11 +103,15 @@
 
 .india-card-title {
 	text-transform: uppercase;
+	text-align: center;
 	font-weight: 900;
-	font-size: small;
+	font-size: medium;
 }
 
 .india-card-content-row {
+	padding: 0;
+	margin: 0;
+	max-height: 2rem;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
