@@ -1,5 +1,6 @@
 import * as ActionTypes from "./ActionTypes";
 const baseUrl = "https://api.covid19api.com";
+const indiaUrl = "https://api.covid19india.org/data.json";
 
 export const fetchGlobalData = () => (dispatch) => {
 	dispatch(loadingGlobalData);
@@ -56,5 +57,59 @@ export const addCountryData = (country, data) => ({
 export const errorCountryData = (country, error) => ({
 	type: ActionTypes.ERROR_COUNTRY,
 	country,
+	payload: error,
+});
+
+export const fetchIndiaData = () => (dispatch) => {
+	dispatch(loadingIndiaData());
+
+	fetch(indiaUrl)
+		.then((response) => {
+			console.log(response);
+			return response;
+		})
+		.then((response) => {
+			console.log(response);
+			return response.body.getReader();
+		})
+		.then((reader) => reader.read())
+		.then((utfObj) => {
+			var utf = utfObj.value;
+			var td = new TextDecoder("utf-8");
+			var jsonData = JSON.parse(td.decode(utf));
+			return jsonData;
+		})
+		.then((jsonData) => {
+			console.log(jsonData);
+			let data = [];
+			var stateData = jsonData.statewise;
+			for (let i = 1; i < 38; i++) {
+				var state = stateData[i];
+				data.push({
+					active: state.active,
+					confirmed: state.confirmed,
+					deaths: state.deaths,
+					recovered: state.recovered,
+					stateName: state.state,
+				});
+			}
+			return data;
+		})
+		.then((data) => dispatch(addIndiaData(data)))
+		.catch((err) => dispatch(errorIndiaData(err)));
+};
+
+export const loadingIndiaData = () => ({
+	type: ActionTypes.LOADING_INDIA,
+	payload: null,
+});
+
+export const addIndiaData = (data) => ({
+	type: ActionTypes.ADD_INDIA,
+	payload: data,
+});
+
+export const errorIndiaData = (error) => ({
+	type: ActionTypes.ERROR_INDIA,
 	payload: error,
 });
