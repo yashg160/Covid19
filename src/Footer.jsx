@@ -10,10 +10,14 @@ export default class Footer extends React.Component {
 				<div className="social">
 					<a
 						href="https://www.linkedin.com/in/yash-gupta-575679179/"
-						target="_blank">
+						target="_blank"
+						rel="noopener noreferrer">
 						LinkedIn
 					</a>
-					<a href="https://www.github.com/yashg160" target="_blank">
+					<a
+						href="https://www.github.com/yashg160"
+						target="_blank"
+						rel="noopener noreferrer">
 						Github
 					</a>
 				</div>
@@ -27,11 +31,17 @@ export default class Footer extends React.Component {
 
 				<p>
 					Data provided by{" "}
-					<a href="https://www.covid19api.com" target="_blank">
+					<a
+						href="https://www.covid19api.com"
+						target="_blank"
+						rel="noopener noreferrer">
 						api.covid19api.com
 					</a>{" "}
 					and{" "}
-					<a href="https://api.covid19india.org" target="_blank">
+					<a
+						href="https://api.covid19india.org"
+						target="_blank"
+						rel="noopener noreferrer">
 						api.covid19india.org
 					</a>
 				</p>
