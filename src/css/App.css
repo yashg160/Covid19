@@ -154,6 +154,7 @@ body {
       flex-wrap: wrap;
   max-width: 100%;
   height: auto;
+  padding-bottom: 3rem;
 }
 
 .india-card {
