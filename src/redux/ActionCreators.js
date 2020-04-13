@@ -95,16 +95,28 @@ export const fetchIndiaData = () => (dispatch) => {
 			let totalConfirmed = {
 				label: "Total Confirmed",
 				data: [],
+				borderColor: "rgba(255, 0, 0, 0.6)",
+				pointBackgroundColor: "rgba(255, 0,0,0.8)",
+				hoverBorderColor: "rgba(255,0,0,0.9)",
+				pointHoverRadius: 6,
 			};
 
 			let totalDeaths = {
 				label: "Total Deaths",
 				data: [],
+				borderColor: "rgba(200,200,200,0.6)",
+				pointBackgroundColor: "rgba(200, 200, 200, 1)",
+				hoverBorderColor: "rgba(230,230,230,1)",
+				pointHoverRadius: 6,
 			};
 
 			let totalRecovered = {
 				label: "Total Recovered",
 				data: [],
+				borderColor: "rgba(0,255,0, 0.6)",
+				pointBackgroundColor: "rgba(0, 255, 0, 0.8)",
+				hoverBorderColor: "rgba(0,255,0,0.9)",
+				pointHoverRadius: 6,
 			};
 
 			// Here all the statewise data is retrieved and processed.
@@ -122,7 +134,8 @@ export const fetchIndiaData = () => (dispatch) => {
 
 			// Here all the chart data is processed.
 			var chartData = jsonData.cases_time_series;
-			for (let i = 0; i < chartData.length; i++) {
+			// Start from index 40 to remove previous values that are all same. This prevents the chart from becoming congested.
+			for (let i = 40; i < chartData.length; i++) {
 				var chartPoint = chartData[i];
 
 				// Use the dates of the data points as labels for the x axis
