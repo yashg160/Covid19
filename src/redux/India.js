@@ -10,7 +10,7 @@ export default function India(
 ) {
 	switch (action.type) {
 		case ActionTypes.LOADING_INDIA:
-			return { ...state, data: {} };
+			return { ...state, data: null };
 		case ActionTypes.ADD_INDIA:
 			return { ...state, loading: false, data: action.payload };
 		case ActionTypes.ERROR_INDIA:
