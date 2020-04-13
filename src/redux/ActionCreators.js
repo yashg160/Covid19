@@ -81,16 +81,30 @@ export const fetchIndiaData = () => (dispatch) => {
 		})
 		.then((jsonData) => {
 			console.log(jsonData);
-			let data = [];
+
+			// All the data that is sent through the India reducer;
+			let data = { indiaData: [], indiaChartData: [] };
+
 			var stateData = jsonData.statewise;
 			for (let i = 1; i < 38; i++) {
 				var state = stateData[i];
-				data.push({
+				data.indiaData.push({
 					active: state.active,
 					confirmed: state.confirmed,
 					deaths: state.deaths,
 					recovered: state.recovered,
 					stateName: state.state,
+				});
+			}
+
+			var chartData = jsonData.cases_time_series;
+			for (let i = 0; i < chartData.length; i++) {
+				var chartPoint = chartData[i];
+				data.indiaChartData.push({
+					date: chartPoint.date,
+					totalConfirmed: chartPoint.totalconfirmed,
+					totalDeaths: chartPoint.totaldeceased,
+					toalRecovered: chartPoint.totalrecovered,
 				});
 			}
 			return data;
