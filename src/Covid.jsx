@@ -2,6 +2,7 @@ import React from "react";
 import AutocompleteText from "./AutocompleteText";
 import Footer from "./Footer";
 import "./css/App.css";
+import { Line } from "react-chartjs-2";
 
 import {
 	fetchGlobalData,
@@ -196,6 +197,13 @@ class Covid extends React.Component {
 									</div>
 								</div>
 							))
+						)}
+					</div>
+					<div className="chart">
+						{this.props.indiaLoading ? (
+							<p>Loading...</p>
+						) : (
+							<Line data={this.props.india.indiaChartData} />
 						)}
 					</div>
 				</div>
