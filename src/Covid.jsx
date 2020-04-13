@@ -203,7 +203,47 @@ class Covid extends React.Component {
 						{this.props.indiaLoading ? (
 							<p>Loading...</p>
 						) : (
-							<Line data={this.props.india.indiaChartData} />
+							<Line
+								data={this.props.india.indiaChartData}
+								options={{
+									layout: {
+										padding: {
+											top: 32,
+											bottom: 32,
+										},
+									},
+									maintainAspectRatio: false,
+									title: {
+										display: true,
+										text: "COVID 19 Cases in India",
+										fontColor: "rgba(200, 200, 200, 1)",
+									},
+									legend: { display: true },
+									scales: {
+										gridLines: {
+											color: "rgba(200, 200, 200, 1)",
+										},
+										yAxes: [
+											{
+												ticks: {
+													beginAtZero: false,
+													stepSize: 1000,
+													fontColor:
+														"rgba(200, 200, 200, 1)",
+												},
+											},
+										],
+										xAxes: [
+											{
+												ticks: {
+													fontColor:
+														"rgba(200, 200, 200, 1)",
+												},
+											},
+										],
+									},
+								}}
+							/>
 						)}
 					</div>
 				</div>
