@@ -31,7 +31,7 @@ class Covid extends React.Component {
 				</div>
 				<div className="container">
 					<div className="card-container">
-						<div className="card card-1 red-card">
+						<div className="card red-card">
 							{this.props.globalLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -47,7 +47,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 
-						<div className="card card-2 neutral-card">
+						<div className="card  neutral-card">
 							{this.props.globalLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -60,7 +60,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 
-						<div className="card card-3 green-card">
+						<div className="card green-card">
 							{this.props.globalLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -83,7 +83,7 @@ class Covid extends React.Component {
 						newCountry={(e, country) => this.newCountry(e, country)}
 					/>
 					<div className="card-container">
-						<div className="card card-1 red-card">
+						<div className="card red-card">
 							{this.props.countryLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -101,7 +101,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 
-						<div className="card card-2 neutral-card">
+						<div className="card neutral-card">
 							{this.props.countryLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -116,7 +116,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 
-						<div className="card card-3 green-card">
+						<div className="card green-card">
 							{this.props.countryLoading ? (
 								<p>Loading...</p>
 							) : (
@@ -135,7 +135,7 @@ class Covid extends React.Component {
 							)}
 						</div>
 
-						<div className="card card-4 yellow-card">
+						<div className="card yellow-card">
 							{this.props.countryLoading ? (
 								<p>Loading...</p>
 							) : (
