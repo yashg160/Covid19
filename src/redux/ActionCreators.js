@@ -83,8 +83,31 @@ export const fetchIndiaData = () => (dispatch) => {
 			console.log(jsonData);
 
 			// All the data that is sent through the India reducer;
-			let data = { indiaData: [], indiaChartData: [] };
+			let data = {
+				indiaData: [],
+				indiaChartData: {
+					labels: [],
+					datasets: [],
+				},
+			};
 
+			// Create the empty objects for total, deaths and recovered. These will be pushed to the datasets array in chart data
+			let totalConfirmed = {
+				label: "Total Confirmed",
+				data: [],
+			};
+
+			let totalDeaths = {
+				label: "Total Deaths",
+				data: [],
+			};
+
+			let totalRecovered = {
+				label: "Total Recovered",
+				data: [],
+			};
+
+			// Here all the statewise data is retrieved and processed.
 			var stateData = jsonData.statewise;
 			for (let i = 1; i < 38; i++) {
 				var state = stateData[i];
@@ -97,16 +120,23 @@ export const fetchIndiaData = () => (dispatch) => {
 				});
 			}
 
+			// Here all the chart data is processed.
 			var chartData = jsonData.cases_time_series;
 			for (let i = 0; i < chartData.length; i++) {
 				var chartPoint = chartData[i];
-				data.indiaChartData.push({
-					date: chartPoint.date,
-					totalConfirmed: chartPoint.totalconfirmed,
-					totalDeaths: chartPoint.totaldeceased,
-					toalRecovered: chartPoint.totalrecovered,
-				});
+
+				// Use the dates of the data points as labels for the x axis
+				data.indiaChartData.labels.push(chartPoint.date);
+
+				totalConfirmed.data.push(chartPoint.totalconfirmed);
+				totalDeaths.data.push(chartPoint.totaldeceased);
+				totalRecovered.data.push(chartPoint.totalrecovered);
 			}
+
+			data.indiaChartData.datasets.push(totalConfirmed);
+			data.indiaChartData.datasets.push(totalDeaths);
+			data.indiaChartData.datasets.push(totalRecovered);
+
 			return data;
 		})
 		.then((data) => dispatch(addIndiaData(data)))
