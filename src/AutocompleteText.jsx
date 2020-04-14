@@ -397,6 +397,7 @@ export default class AutocompleteText extends React.Component {
 					onChange={onChange}
 					onKeyDown={onKeyDown}
 					value={userInput}
+					placeholder="Press Enter to Search"
 				/>
 				{suggestionsListComponent}
 			</Fragment>
