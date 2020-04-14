@@ -42,6 +42,38 @@ body {
           justify-content: center;
 }
 
+.loading {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: 0.3rem solid #a5a5a5;
+  border-top: 0.3rem solid #0076e4;
+  -webkit-animation: spin 1s ease-in infinite;
+          animation: spin 1s ease-in infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .card-container {
   display: -webkit-box;
   display: -ms-flexbox;
