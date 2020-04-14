@@ -18,7 +18,7 @@ class Covid extends React.Component {
 		this.props.fetchIndiaData();
 	}
 
-	newCountry(e, country) {
+	newCountry(country) {
 		console.log(country);
 		this.props.fetchCountryData(country);
 	}
@@ -87,7 +87,7 @@ class Covid extends React.Component {
 					</div>
 					<h2 className="instruction">Country Name</h2>
 					<AutocompleteText
-						newCountry={(e, country) => this.newCountry(e, country)}
+						newCountry={(e, country) => this.newCountry(country)}
 					/>
 					<div className="card-container">
 						<div className="card red-card">
