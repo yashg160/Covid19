@@ -18,3 +18,9 @@ This is a simple react app that fetches data regarding the ongoing coronavirus p
 -   Updated redux code and used new API for fetching data
 -   Added footer to add credits to creator
 -   Removed unnecessary boilerplate and files
+
+### April 13, 2020
+
+-   Made completely responsive. Windows resizes automatically on smaller screens.
+-   Added a line graph for India data only.
+-   Minor styling and fresh looks
