@@ -36,7 +36,7 @@ class Covid extends React.Component {
 							{this.props.globalError === "ERR_TRUE" ? (
 								<p>error</p>
 							) : this.props.globalLoading ? (
-								<p>Loading...</p>
+								<div className="loading" />
 							) : (
 								<div>
 									<p className="card-title">World Total</p>
@@ -54,7 +54,7 @@ class Covid extends React.Component {
 							{this.props.globalError === "ERR_TRUE" ? (
 								<p>error</p>
 							) : this.props.globalLoading ? (
-								<p>Loading...</p>
+								<div className="loading" />
 							) : (
 								<div>
 									<p className="card-title">World Deaths</p>
@@ -69,7 +69,7 @@ class Covid extends React.Component {
 							{this.props.globalError === "ERR_TRUE" ? (
 								<p>error</p>
 							) : this.props.globalLoading ? (
-								<p>Loading...</p>
+								<div className="loading" />
 							) : (
 								<div>
 									<p className="card-title">
@@ -94,7 +94,7 @@ class Covid extends React.Component {
 							{this.props.countryError === "ERR_TRUE" ? (
 								<p>error</p>
 							) : this.props.countryLoading ? (
-								<p>Loading...</p>
+								<div className="loading" />
 							) : (
 								<div>
 									<p className="card-title">
@@ -114,7 +114,7 @@ class Covid extends React.Component {
 							{this.props.countryError === "ERR_TRUE" ? (
 								<p>error</p>
 							) : this.props.countryLoading ? (
-								<p>Loading...</p>
+								<div className="loading" />
 							) : (
 								<div>
 									<p className="card-title">
@@ -131,7 +131,7 @@ class Covid extends React.Component {
 							{this.props.countryError === "ERR_TRUE" ? (
 								<p>error</p>
 							) : this.props.countryLoading ? (
-								<p>Loading...</p>
+								<div className="loading" />
 							) : (
 								<div>
 									<p className="card-title">
@@ -152,7 +152,7 @@ class Covid extends React.Component {
 							{this.props.countryError === "ERR_TRUE" ? (
 								<p>error</p>
 							) : this.props.countryLoading ? (
-								<p>Loading...</p>
+								<div className="loading" />
 							) : (
 								<div>
 									<p className="card-title">
@@ -170,7 +170,7 @@ class Covid extends React.Component {
 						{this.props.indiaError === "ERR_TRUE" ? (
 							<p>error</p>
 						) : this.props.indiaLoading ? (
-							<p>Loading</p>
+							<div className="loading" />
 						) : (
 							this.props.india.indiaData.map((state) => (
 								<div
