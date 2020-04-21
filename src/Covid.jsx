@@ -2,7 +2,7 @@ import React from "react";
 import AutocompleteText from "./AutocompleteText";
 import Footer from "./Footer";
 import "./css/App.css";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 
 import {
 	fetchGlobalData,
@@ -220,7 +220,7 @@ class Covid extends React.Component {
 							<p>Loading...</p>
 						) : (
 							<Line
-								data={this.props.india.indiaChartData}
+								data={this.props.india.lineGraphData}
 								options={{
 									layout: {
 										padding: {
@@ -260,6 +260,51 @@ class Covid extends React.Component {
 									},
 								}}
 							/>
+						)}
+					</div>
+					<div className="chart">
+					{this.props.indiaLoading ? <div className="loading"></div>: (
+							<Bar
+							data={this.props.india.barGraphData}
+							options={{
+								layout: {
+									padding: {
+										top: 32,
+										bottom: 32,
+									},
+								},
+								maintainAspectRatio: false,
+								title: {
+									display: true,
+									text: "COVID 19 Cases in India",
+									fontColor: "rgba(200, 200, 200, 1)",
+								},
+								legend: { display: true },
+								scales: {
+									gridLines: {
+										color: "rgba(200, 200, 200, 1)",
+									},
+									yAxes: [
+										{
+											ticks: {
+												beginAtZero: false,
+												stepSize: 6000,
+												fontColor:
+													"rgba(200, 200, 200, 1)",
+											},
+										},
+									],
+									xAxes: [
+										{
+											ticks: {
+												fontColor:
+													"rgba(200, 200, 200, 1)",
+											},
+										},
+									],
+								},
+							}}
+						/>
 						)}
 					</div>
 				</div>
