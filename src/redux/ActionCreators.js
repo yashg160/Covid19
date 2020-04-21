@@ -85,10 +85,14 @@ export const fetchIndiaData = () => (dispatch) => {
 			// All the data that is sent through the India reducer;
 			let data = {
 				indiaData: [],
-				indiaChartData: {
+				lineGraphData: {
 					labels: [],
 					datasets: [],
 				},
+				barGraphData: {
+					labels: [],
+					datasets: []
+				}
 			};
 
 			// Create the empty objects for total, deaths and recovered. These will be pushed to the datasets array in chart data
@@ -139,16 +143,50 @@ export const fetchIndiaData = () => (dispatch) => {
 				var chartPoint = chartData[i];
 
 				// Use the dates of the data points as labels for the x axis
-				data.indiaChartData.labels.push(chartPoint.date);
+				data.lineGraphData.labels.push(chartPoint.date);
 
 				totalConfirmed.data.push(chartPoint.totalconfirmed);
 				totalDeaths.data.push(chartPoint.totaldeceased);
 				totalRecovered.data.push(chartPoint.totalrecovered);
 			}
 
-			data.indiaChartData.datasets.push(totalConfirmed);
-			data.indiaChartData.datasets.push(totalDeaths);
-			data.indiaChartData.datasets.push(totalRecovered);
+			data.lineGraphData.datasets.push(totalConfirmed);
+			data.lineGraphData.datasets.push(totalDeaths);
+			data.lineGraphData.datasets.push(totalRecovered);
+
+			// Now we start processing the data for the tested samples and the bar graph data
+			let perDayTested = {
+				label: "Daily Tested",
+				data: [],
+				backgroundColor: "rgba(66,155,245, 0.8)",
+				hoverBackgroundColor: "rgba(21, 110, 200, 0.8)",
+				barPercentage: 0.75
+			};
+
+			let perDayPositiveCases = {
+				label: "Daily Positive Cases",
+				data: [],
+				backgroundColor: "rgba(255,0,0, 0.8)",
+				hoverBackgroundColor: "rgba(200, 0, 0, 0.8)",
+				barPercentage: 0.75
+			};
+
+			// The tested data from API that has been processed to json format
+			var tempBarData = jsonData.tested;
+
+			for(let i = 14; i < tempBarData.length; i++){
+				var dataPoint = tempBarData[i];
+				var prevPoint = tempBarData[i-1];
+
+				perDayPositiveCases.data.push(Math.abs(dataPoint.totalpositivecases - prevPoint.totalpositivecases));
+				perDayTested.data.push(Math.abs(dataPoint.totalsamplestested - prevPoint.totalsamplestested));
+
+				var timestamp = dataPoint.updatetimestamp.split(" ")[0];
+				data.barGraphData.labels.push(timestamp);
+			}
+
+			data.barGraphData.datasets.push(perDayPositiveCases);
+			data.barGraphData.datasets.push(perDayTested);
 
 			return data;
 		})
